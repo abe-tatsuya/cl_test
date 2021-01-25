@@ -128,7 +128,7 @@ cl_test(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[]) {
 /*------------------------------------------------------*/
 
 //create command queue is OK
-    cl_command_queue queue = clCreateCommandQueue(context, device_id, 0, &err);
+    cl_command_queue queue = clCreateCommandQueueWithProperties(context, device_id, 0, &err);
     if(err != CL_SUCCESS){
         printf("clcreatecommand queue is failed\n");
         printError(err);
